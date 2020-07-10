@@ -1,3 +1,4 @@
+import 'package:clone_youtube_app/Api.dart';
 import 'package:flutter/material.dart';
 
 class Inicio extends StatefulWidget {
@@ -8,6 +9,11 @@ class Inicio extends StatefulWidget {
 class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
+
+    Api api = Api();
+    api.search("");
+
+
     return Container(
       child: Center(
         child: Text(
