@@ -1,3 +1,7 @@
+import 'package:clone_youtube_app/screens/Biblioteca.dart';
+import 'package:clone_youtube_app/screens/EmAlta.dart';
+import 'package:clone_youtube_app/screens/Inicio.dart';
+import 'package:clone_youtube_app/screens/Inscricao.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -9,10 +13,16 @@ class _HomeState extends State<Home> {
 
   int _indexCurrentBottomNavigatorBar = 0;
 
-
-
   @override
   Widget build(BuildContext context) {
+
+    List<Widget> screens = [
+      Inicio(),
+      EmAlta(),
+      Inscricao(),
+      Biblioteca()
+    ];
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -39,7 +49,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: Container(),
+      body: screens[_indexCurrentBottomNavigatorBar],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indexCurrentBottomNavigatorBar,
         onTap: (indexBottomNavigatorBar){
