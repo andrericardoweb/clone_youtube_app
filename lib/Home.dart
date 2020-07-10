@@ -6,6 +6,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int _indexCurrentBottomNavigatorBar = 0;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +40,35 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: Container(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _indexCurrentBottomNavigatorBar,
+        onTap: (indexBottomNavigatorBar){
+          setState(() {
+            _indexCurrentBottomNavigatorBar = indexBottomNavigatorBar;
+          });
+        },
+
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.red,
+        items: [
+          BottomNavigationBarItem(
+            title: Text("Início"),
+            icon: Icon(Icons.home)
+          ),
+          BottomNavigationBarItem(
+            title: Text("Em alta"),
+            icon: Icon(Icons.whatshot)
+          ),
+          BottomNavigationBarItem(
+            title: Text("Inscrições"),
+            icon: Icon(Icons.subscriptions)
+          ),
+          BottomNavigationBarItem(
+            title: Text("Biblioteca"),
+            icon: Icon(Icons.folder)
+          ),
+        ]
+      ),
     );
   }
 }
