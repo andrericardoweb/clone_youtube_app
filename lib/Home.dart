@@ -49,7 +49,10 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: screens[_indexCurrentBottomNavigatorBar],
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: screens[_indexCurrentBottomNavigatorBar],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indexCurrentBottomNavigatorBar,
         onTap: (indexBottomNavigatorBar){
